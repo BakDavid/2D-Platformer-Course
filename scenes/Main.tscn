@@ -1,11 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://resources/tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://assets/player/character_0000.png" type="Texture" id=2]
-[ext_resource path="res://scenes/Player.gd" type="Script" id=3]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5, 8 )
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
 
 [node name="Node" type="Node"]
 
@@ -16,19 +12,7 @@ cell_size = Vector2( 18, 18 )
 format = 1
 tile_data = PoolIntArray( 393229, 1, 0, 393230, 1, 2, 458765, 1, 131072, 458766, 1, 131074, 458768, 1, 0, 589842, 1, 0, 589843, 1, 1, 589844, 1, 1, 589845, 1, 2, 655378, 1, 131072, 655379, 1, 131073, 655380, 1, 131073, 655381, 1, 131074, 786455, 1, 0, 786456, 1, 1, 786457, 1, 1, 786458, 1, 2, 851991, 1, 131072, 851992, 1, 131073, 851993, 1, 131073, 851994, 1, 131074, 917516, 1, 0, 917517, 1, 1, 917518, 1, 1, 917519, 1, 1, 917520, 1, 1, 917521, 1, 1, 917522, 1, 1, 917523, 1, 1, 917524, 1, 1, 917525, 1, 2, 917526, 0, 0, 917527, 0, 0, 917528, 0, 0, 917529, 0, 0, 917530, 0, 0, 983051, 1, 0, 983052, 1, 0, 983053, 1, 131073, 983054, 1, 131073, 983055, 1, 131073, 983056, 1, 131073, 983057, 1, 131073, 983058, 1, 131073, 983059, 1, 131073, 983060, 1, 131073, 983061, 1, 131074 )
 
-[node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 31, 30 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Player"]
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 0, 4 )
-shape = SubResource( 1 )
+[node name="Player" parent="." instance=ExtResource( 2 )]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
