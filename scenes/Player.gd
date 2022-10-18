@@ -6,6 +6,7 @@ var maxHorizontalSpeed = 140
 var horizontalAcceleration = 2000
 var jumpSpeed = 360
 var jumpTerminationMultiplier = 4
+var hasDoubleJump = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,8 +23,11 @@ func _process(delta):
 	velocity.x = clamp(velocity.x,-maxHorizontalSpeed,maxHorizontalSpeed)
 	
 	#player jump
-	if(moveVector.y < 0 && (is_on_floor() || !$CoyoteTimer.is_stopped())):
+	if(moveVector.y < 0 && (is_on_floor() || !$CoyoteTimer.is_stopped() || hasDoubleJump)):
 		velocity.y = moveVector.y * jumpSpeed
+		if(!is_on_floor() && $CoyoteTimer.is_stopped()):
+			hasDoubleJump = false
+		$CoyoteTimer.stop()
 		
 	if(velocity.y < 0 && !Input.is_action_pressed("jump")):
 		velocity.y += gravity * jumpTerminationMultiplier * delta
@@ -35,6 +39,9 @@ func _process(delta):
 	
 	if(wasOnFloor && !is_on_floor()):
 		$CoyoteTimer.start()
+	
+	if(is_on_floor()):
+		hasDoubleJump = true
 	
 	update_animation()
 
