@@ -83,8 +83,8 @@ anims/idle = SubResource( 3 )
 anims/pickup = SubResource( 4 )
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 32768
-collision_mask = 32768
+collision_layer = 262144
+collision_mask = 262144
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 2 )
@@ -93,5 +93,4 @@ shape = SubResource( 2 )
 position = Vector2( 0, -0.231076 )
 scale = Vector2( 1.04737, 1.04737 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
