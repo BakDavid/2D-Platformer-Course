@@ -74,7 +74,7 @@ animations = [ {
 "speed": 7.0
 } ]
 
-[node name="Coin" type="Node2D"]
+[node name="Coin" type="Node2D" groups=["coin"]]
 script = ExtResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -93,4 +93,5 @@ shape = SubResource( 2 )
 position = Vector2( 0, -0.231076 )
 scale = Vector2( 1.04737, 1.04737 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
