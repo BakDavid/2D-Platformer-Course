@@ -139,8 +139,11 @@ rotation = 3.14159
 [node name="Spikes2" parent="Hazards" index="15" instance=ExtResource( 3 )]
 position = Vector2( -198, -77 )
 
-[node name="Spikes3" parent="Hazards" index="16" instance=ExtResource( 3 )]
-position = Vector2( -234, -77 )
+[node name="Spikes18" parent="Hazards" index="16" instance=ExtResource( 3 )]
+position = Vector2( 54, 31 )
 
-[node name="Player" parent="." index="7"]
-position = Vector2( 27, 31 )
+[node name="Spikes19" parent="Hazards" index="17" instance=ExtResource( 3 )]
+position = Vector2( 99, -5 )
+
+[node name="Spikes3" parent="Hazards" index="18" instance=ExtResource( 3 )]
+position = Vector2( -234, -77 )
