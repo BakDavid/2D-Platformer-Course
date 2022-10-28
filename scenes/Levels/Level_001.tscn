@@ -31,6 +31,10 @@ position = Vector2( -378, -77 )
 position = Vector2( -306, -86 )
 startDirection = 1
 
+[node name="EnemySpawner2" parent="Enemies" index="4" instance=ExtResource( 6 )]
+position = Vector2( 45, 13 )
+startDirection = 1
+
 [node name="Coin" parent="Collectibles" index="0" instance=ExtResource( 5 )]
 position = Vector2( -9, 13 )
 
@@ -140,7 +144,7 @@ rotation = 3.14159
 position = Vector2( -198, -77 )
 
 [node name="Spikes18" parent="Hazards" index="16" instance=ExtResource( 3 )]
-position = Vector2( 54, 31 )
+position = Vector2( -90, -77 )
 
 [node name="Spikes19" parent="Hazards" index="17" instance=ExtResource( 3 )]
 position = Vector2( 99, -5 )
