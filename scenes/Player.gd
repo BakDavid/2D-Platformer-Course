@@ -44,6 +44,7 @@ func change_state(newState):
 func process_normal(delta):
 	#player movement
 	if(isStateNew):
+		$DashParticles.emitting = false
 		$DashArea/CollisionShape2D.disabled = true
 		$HazardArea.collision_mask = defaultHazardMask
 	var moveVector = get_movement_vector()
@@ -85,6 +86,7 @@ func process_normal(delta):
 	
 func process_dash(delta):
 	if(isStateNew):
+		$DashParticles.emitting = true
 		$"/root/Helpers".apply_camera_shake(.75)
 		$DashArea/CollisionShape2D.disabled = false
 		$HazardArea.collision_mask = dashHazardMask
