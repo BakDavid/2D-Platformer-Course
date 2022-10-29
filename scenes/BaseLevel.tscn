@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/GameCamera.tscn" type="PackedScene" id=2]
@@ -7,12 +7,18 @@
 [ext_resource path="res://scenes/UI/LevelUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/UI/LevelComplete.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/BaseLevel.gd" type="Script" id=7]
+[ext_resource path="res://resources/decorative_tileset.tres" type="TileSet" id=8]
+[ext_resource path="res://scenes/Clouds.tscn" type="PackedScene" id=9]
 
 [node name="BaseLevel" type="Node" groups=["base_level"]]
 script = ExtResource( 7 )
 levelCompleteScene = ExtResource( 6 )
 
 [node name="LevelUI" parent="." instance=ExtResource( 5 )]
+
+[node name="GameCamera" parent="." instance=ExtResource( 2 )]
+
+[node name="Clouds" parent="GameCamera" instance=ExtResource( 9 )]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( -333, -185 )
@@ -21,7 +27,18 @@ cell_size = Vector2( 18, 18 )
 format = 1
 tile_data = PoolIntArray( 917526, 0, 0, 917527, 0, 0, 917528, 0, 0, 917529, 0, 0, 917530, 0, 0 )
 
-[node name="GameCamera" parent="." instance=ExtResource( 2 )]
+[node name="DecorativeTileMap" type="TileMap" parent="."]
+position = Vector2( -333, -185 )
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 18, 18 )
+format = 1
+
+[node name="ForegroundTileMap" type="TileMap" parent="."]
+position = Vector2( -333, -185 )
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 18, 18 )
+format = 1
+tile_data = PoolIntArray( 917526, 0, 0, 917527, 0, 0, 917528, 0, 0, 917529, 0, 0, 917530, 0, 0 )
 
 [node name="Flag" parent="." instance=ExtResource( 4 )]
 
