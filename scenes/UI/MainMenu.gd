@@ -5,6 +5,7 @@ onready var optionsButton = $MarginContainer/PanelContainer/MarginContainer/VBox
 onready var quitButton = $MarginContainer/PanelContainer/MarginContainer/VBoxContainer/QuitButton
 
 func _ready():
+	OS.window_fullscreen = true
 	playButton.connect("pressed", self, "on_play_pressed")
 	optionsButton.connect("pressed", self, "on_options_pressed")
 	quitButton.connect("pressed", self, "on_quit_pressed")

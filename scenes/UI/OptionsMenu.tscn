@@ -33,10 +33,10 @@ anchor_bottom = 1.0
 theme = ExtResource( 2 )
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
-margin_left = 52.0
-margin_top = 41.0
-margin_right = 268.0
-margin_bottom = 138.0
+margin_left = 132.0
+margin_top = 86.0
+margin_right = 348.0
+margin_bottom = 183.0
 rect_pivot_offset = Vector2( 108, 48 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
