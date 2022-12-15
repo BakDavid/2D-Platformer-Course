@@ -73,6 +73,7 @@ script = ExtResource( 4 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
+bus = "SFX"
 
 [node name="RandomAudioStreamPlayer" parent="." instance=ExtResource( 12 )]
 
@@ -112,7 +113,6 @@ offset = Vector2( 0, -18 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -18 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 centered = false
 offset = Vector2( 0, -18 )
